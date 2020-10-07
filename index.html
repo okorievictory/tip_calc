@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tiping App</title>
+</head>
+<body>
+	<h3>Your total Expense : <span id="displayExpense">0</span> </h3>
+	<h3>You are To Tip : &#x20A6; <span id="displayTip">On This Expense</span> </h3>
+	<button onclick="window.location =''">Reload Page</button>
+
+
+	<script type="text/javascript">
+		let totalExpenses = parseInt(prompt("Enter total expense : Numbers Only", "1000"));
+		// let totalExpenses = parseInt(prompt("Only numbers are accepted: Numbers Only", "1000"));
+		totalExpenses == '' ? alert("only numbers are accepted, Please click the reload button and try again") : 
+		(isNaN(totalExpenses) ? alert('only numbers are accepted, Please click the reload button and try again') : 
+
+			document.getElementById('displayExpense').innerHTML = totalExpenses);
+
+		let tipRange = parseInt(prompt("Rate tip service : 1-10 \n1-3 : poor 3% \n4-5 : Fair 5% \n6-8 : Good 7% \n9-10 : Excellent 9%", "10"));
+		let tip = (tipRange >=1 && tipRange <=3 ? totalExpenses * 0.03 :
+			(tipRange >=4 && tipRange <=5 ? totalExpenses * 0.05 :
+			 (tipRange >=6 && tipRange <=8 ? totalExpenses * 0.07 :
+			 	(tipRange >=9 && tipRange <=10 ? totalExpenses * 0.09 : "0"))))
+
+		document.getElementById('displayTip').innerHTML = tip;
+	</script>
+
+</body>
+</html>
